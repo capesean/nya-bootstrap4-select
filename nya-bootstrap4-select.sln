@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "nya-bootstrap4-select", "nya-bootstrap4-select\", "{FE503C5A-A911-494F-88D9-DB4E0763D0FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_54382"
+		Debug.AspNetCompiler.PhysicalPath = "nya-bootstrap4-select\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54382\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_54382"
+		Release.AspNetCompiler.PhysicalPath = "nya-bootstrap4-select\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_54382\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "54382"
+		SlnRelativePath = "nya-bootstrap4-select\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE503C5A-A911-494F-88D9-DB4E0763D0FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE503C5A-A911-494F-88D9-DB4E0763D0FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F07BFD74-3098-4603-85C2-038A25181D45}
+	EndGlobalSection
+EndGlobal
