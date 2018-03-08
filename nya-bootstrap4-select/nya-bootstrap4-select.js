@@ -419,7 +419,7 @@
             '<span class="caret"></span>' +
             '</button>';
 
-        var DROPDOWN_CONTAINER = '<div class="dropdown-menu open"></div>';
+        var DROPDOWN_CONTAINER = '<div class="dropdown-menu"></div>';
 
         var SEARCH_BOX = '<div class="bs-searchbox">' +
             '<input type="text" class="form-control">' +
@@ -744,10 +744,10 @@
                     // if click the outside of dropdown menu, close the dropdown menu
                     var outClick = function (event) {
                         if (filterTarget(event.target, $element.parent()[0], $element[0]) === null) {
-                            if ($element.hasClass('open')) {
+                            if ($element.hasClass('show')) {
                                 $element.triggerHandler('blur');
                             }
-                            $element.removeClass('open');
+                            $element.removeClass('show');
                         }
                     };
                     $document.on('click', outClick);
@@ -777,17 +777,17 @@
 
 
                     dropdownToggle.on('blur', function () {
-                        if (!$element.hasClass('open')) {
+                        if (!$element.hasClass('show')) {
                             $element.triggerHandler('blur');
                         }
                     });
                     dropdownToggle.on('click', function () {
                         var nyaBsOptionNode;
-                        $element.toggleClass('open');
-                        if ($element.hasClass('open') && typeof liHeight === 'undefined') {
+                        $element.toggleClass('show');
+                        if ($element.hasClass('show') && typeof liHeight === 'undefined') {
                             calcMenuSize();
                         }
-                        if ($attrs.liveSearch === 'true' && $element.hasClass('open')) {
+                        if ($attrs.liveSearch === 'true' && $element.hasClass('show')) {
                             reset_search();
                             searchBox.children().eq(0)[0].focus();
                             nyaBsOptionNode = findFocus(true);
@@ -795,7 +795,7 @@
                                 dropdownMenu.children().removeClass('active');
                                 jqLite(nyaBsOptionNode).addClass('active');
                             }
-                        } else if ($element.hasClass('open')) {
+                        } else if ($element.hasClass('show')) {
                             nyaBsOptionNode = findFocus(true);
                             if (nyaBsOptionNode) {
                                 setFocus(nyaBsOptionNode);
@@ -947,11 +947,11 @@
 
 
                             // press enter to active dropdown
-                            if ((keyCode === 13 || keyCode === 38 || keyCode === 40) && !$element.hasClass('open')) {
+                            if ((keyCode === 13 || keyCode === 38 || keyCode === 40) && !$element.hasClass('show')) {
 
                                 event.stopPropagation();
 
-                                $element.addClass('open');
+                                $element.addClass('show');
 
                                 // calculate menu size
                                 if (typeof liHeight === 'undefined') {
@@ -980,8 +980,8 @@
                             }
 
                             // press enter or escape to de-active dropdown
-                            //if((keyCode === 13 || keyCode === 27) && $element.hasClass('open')) {
-                            //  $element.removeClass('open');
+                            //if((keyCode === 13 || keyCode === 27) && $element.hasClass('show')) {
+                            //  $element.removeClass('show');
                             //  event.stopPropagation();
                             //}
                         } else if (menuContainer) {
@@ -989,10 +989,10 @@
                             if (keyCode === 27) {
                                 // escape pressed
                                 dropdownToggle[0].focus();
-                                if ($element.hasClass('open')) {
+                                if ($element.hasClass('show')) {
                                     $element.triggerHandler('blur');
                                 }
-                                $element.removeClass('open');
+                                $element.removeClass('show');
                                 event.stopPropagation();
 
                             } else if (keyCode === 38) {
@@ -1033,7 +1033,7 @@
                         } else if (searchBoxContainer) {
                             if (keyCode === 27) {
                                 dropdownToggle[0].focus();
-                                $element.removeClass('open');
+                                $element.removeClass('show');
                                 event.stopPropagation();
                             } else if (keyCode === 38) {
                                 // up
@@ -1280,10 +1280,10 @@
 
                         if (!isMultiple) {
                             // in single selection mode. close the dropdown menu
-                            if ($element.hasClass('open')) {
+                            if ($element.hasClass('show')) {
                                 $element.triggerHandler('blur');
                             }
-                            $element.removeClass('open');
+                            $element.removeClass('show');
                             dropdownToggle[0].focus();
                         }
                         updateButtonContent();

@@ -166,7 +166,7 @@
                     left: 0;
                 }
 
-    .nya-bs-select.show-menu-arrow.open > .btn {
+    .nya-bs-select.show-menu-arrow.show > .btn {
         z-index: 1036;
     }
 
@@ -220,8 +220,8 @@
         left: auto;
     }
 
-    .nya-bs-select.show-menu-arrow.open > .dropdown-toggle:before,
-    .nya-bs-select.show-menu-arrow.open > .dropdown-toggle:after {
+    .nya-bs-select.show-menu-arrow.show > .dropdown-toggle:before,
+    .nya-bs-select.show-menu-arrow.show > .dropdown-toggle:after {
         display: block;
     }
 
@@ -269,6 +269,14 @@
         z-index: 1040;
     }
 
-    .nya-bs-select.on-modal.open > .btn {
+    .nya-bs-select.on-modal.show > .btn {
         z-index: 1041;
+    }
+
+    .nya-bs-select.show .dropdown-menu {
+        display: block;
+    }
+
+    .nya-bs-select .nya-bs-option.dropdown-item a {
+        color:inherit;
     }

@@ -7,6 +7,8 @@
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="nya-bootstrap4-select.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="app.css" rel="stylesheet" />
 
 </head>
 <body ng-app="app" ng-controller="MainCtrl">
@@ -36,26 +38,46 @@
         </div>
 
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
 
-                    <ol class="nya-bs-select form-control" ng-model="example1" data-live-search="true" data-size="10">
-                        <li nya-bs-option="option in example1options" class="nya-bs-option" data-value="option.id">
-                            <a>{{option.name}}<span class="fa fa-check check-mark"></span></a>
+            <div class="row">
+
+                <div class="col-md-4">
+
+                    <h2>Simple Example</h2>
+
+                    <ol class="nya-bs-select form-control" ng-model="simple" data-live-search="true" data-size="10">
+                        <li nya-bs-option="option in options" class="nya-bs-option dropdown-item" data-value="option.id">
+                            <a>{{option.label}}<span class="fa fa-check check-mark"></span></a>
                         </li>
                     </ol>
 
+                    <h6 class="mt-4">Model:</h6>
+                    <pre class="mt-2 border px-4 py-3"><code>{{simple|json}}</code></pre>
 
                 </div>
-            </div>
 
-            <hr>
+                <div class="col-md-4">
+
+                    <h2>Multiple Select</h2>
+
+                    <ol class="nya-bs-select form-control" ng-model="multiple" data-live-search="true" data-size="10" multiple>
+                        <li nya-bs-option="option in options" class="nya-bs-option dropdown-item" data-value="option.id">
+                            <a>{{option.label}}<span class="fa fa-check check-mark"></span></a>
+                        </li>
+                    </ol>
+
+                    <h6 class="mt-4">Model:</h6>
+                    <pre class="mt-2 border px-4 py-3"><code>{{multiple}}</code></pre>
+
+                </div>
+
+            </div>
 
         </div>
 
     </main>
 
-    <footer class="container">
+    <footer class="container mt-5">
         <p>&copy; <a href="https://github.com/capesean">@capesean</a></p>
     </footer>
 
