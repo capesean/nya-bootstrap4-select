@@ -1275,8 +1275,32 @@
                             }
                         }
                         // update view value regardless
-                        ngCtrl.$setViewValue(viewValue);
-                        $scope.$digest();
+                        if (isMultiple) {
+                            ngCtrl.$setViewValue(viewValue);
+
+                            // remove previous active state
+                            dropdownMenu.children().removeClass('active');
+
+                            // get the selected option & set active
+                            var nyaBsOption = getOptionByValue(value);
+                            if (nyaBsOption) {
+                                jqLite(nyaBsOption).addClass('active');
+                                //setFocus(nyaBsOption);
+                            }
+
+                            $scope.$digest();
+                        } else {
+                            // allow deselecting an item in single mode
+                            if (ngCtrl.$viewValue === value) {
+                                value = undefined;
+                                viewValue = undefined;
+                                ngCtrl.$setViewValue(undefined);
+                                $scope.$digest();
+                            } else {
+                                ngCtrl.$setViewValue(viewValue);
+                                $scope.$digest();
+                            }
+                        }
 
                         if (!isMultiple) {
                             // in single selection mode. close the dropdown menu
@@ -1311,6 +1335,22 @@
                             }
                         }
 
+                    }
+
+                    /**
+                     * get option by value
+                     * @param value the value to search for
+                     */
+                    function getOptionByValue(value) {
+                        //todo: if(isMultiple) return array
+                        var option = undefined;
+                        var liElements = dropdownMenu[0].querySelectorAll('.nya-bs-option')
+                        for (var i = 0; i < liElements.length; i++) {
+                            var nyaBsOption = jqLite(liElements[i]);
+                            var optionValue = getOptionValue(nyaBsOption);
+                            if (optionValue === value) option = nyaBsOption;
+                        }
+                        return option;
                     }
 
                     function getOptionText(nyaBsOption) {

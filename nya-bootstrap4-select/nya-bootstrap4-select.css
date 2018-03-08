@@ -277,6 +277,18 @@
         display: block;
     }
 
-    .nya-bs-select .nya-bs-option.dropdown-item a {
-        color:inherit;
+    .nya-bs-select .nya-bs-option.dropdown-item {
+        cursor: pointer;
+    }
+
+        .nya-bs-select .nya-bs-option.dropdown-item a {
+            color: inherit;
+        }
+
+    .nya-bs-select li.nya-bs-option.dropdown-item a {
+        text-decoration: none;
+    }
+
+    .nya-bs-select li.nya-bs-option.dropdown-item:hover:not(.active) {
+        background-color: #e9ecef;
     }
