@@ -1283,15 +1283,14 @@
 
                             // get the selected option & set active
                             var nyaBsOption = getOptionByValue(value);
-                            if (nyaBsOption) {
-                                jqLite(nyaBsOption).addClass('active');
-                                //setFocus(nyaBsOption);
-                            }
+                            if (nyaBsOption) jqLite(nyaBsOption).addClass('active');
 
                             $scope.$digest();
                         } else {
                             // allow deselecting an item in single mode
                             if (ngCtrl.$viewValue === value) {
+                                var nyaBsOption = getOptionByValue(value);
+                                if (nyaBsOption) jqLite(nyaBsOption).removeClass('selected');
                                 value = undefined;
                                 viewValue = undefined;
                                 ngCtrl.$setViewValue(undefined);
